@@ -24,11 +24,15 @@ class UzytkownikMenedzer
 
     PlikZUzytkownikami plikZUzytkownikami;
 
+    int znajdzIdUzytkownika();
+
 public:
     UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
+    void logowanieUzytkownika();
+    void wyswietlZalogowanegoUzytkownika();
 };
 
 #endif // UZYTKOWNIKMENEDZER_H

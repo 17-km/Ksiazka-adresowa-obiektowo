@@ -33,6 +33,7 @@ public:
     void wczytajUzytkownikowZPliku();
     void logowanieUzytkownika();
     void wyswietlZalogowanegoUzytkownika();
+    void zmianaHaslaZalogowanegoUzytkownika();
 };
 
 #endif // UZYTKOWNIKMENEDZER_H

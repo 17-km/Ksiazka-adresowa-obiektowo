@@ -19,6 +19,7 @@ public:
     void logowanieUzytkownika();
     void wyswietlZalogowanegoUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
+    void wylogowanieUzytkownika();
 
 };
 

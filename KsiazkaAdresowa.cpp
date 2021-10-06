@@ -15,3 +15,13 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
 {
     uzytkownikMenedzer.wypiszWszystkichUzytkownikow();
 }
+
+void KsiazkaAdresowa::logowanieUzytkownika()
+{
+    uzytkownikMenedzer.logowanieUzytkownika();
+}
+
+void KsiazkaAdresowa::wyswietlZalogowanegoUzytkownika()
+{
+    uzytkownikMenedzer.wyswietlZalogowanegoUzytkownika();
+}

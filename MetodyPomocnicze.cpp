@@ -14,3 +14,13 @@ string MetodyPomocnicze::wczytajLinie()
     getline(cin, wejscie);
     return wejscie;
 }
+
+string MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst)
+{
+    if (!tekst.empty())
+    {
+        transform(tekst.begin(), tekst.end(), tekst.begin(), ::tolower);
+        tekst[0] = toupper(tekst[0]);
+    }
+    return tekst;
+}

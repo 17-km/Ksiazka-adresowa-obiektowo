@@ -35,6 +35,7 @@ public:
     void wyswietlZalogowanegoUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     void wylogowanieUzytkownika();
+    int pobierzIdZalogowanegoUzytkownika();
 };
 
 #endif // UZYTKOWNIKMENEDZER_H

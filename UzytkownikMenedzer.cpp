@@ -160,3 +160,8 @@ void UzytkownikMenedzer::wylogowanieUzytkownika()
     cout << "Wylogowales sie" << endl;
     system("pause");
 }
+
+int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
+}

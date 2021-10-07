@@ -70,6 +70,7 @@ void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
         cout << uzytkownicy[i].pobierzLogin() << endl;
         cout << uzytkownicy[i].pobierzHaslo() << endl;
     }
+    system("pause");
 }
 
 void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
@@ -120,7 +121,7 @@ int UzytkownikMenedzer::znajdzIdUzytkownika()
 void UzytkownikMenedzer::wyswietlZalogowanegoUzytkownika()
 {
     if (idZalogowanegoUzytkownika == 0)
-        cout << "Nikt nie jest zalogowany";
+        cout << "Nikt nie jest zalogowany" << endl;
     else
     {
         for (int i = 0; i < uzytkownicy.size(); i++)
@@ -134,6 +135,7 @@ void UzytkownikMenedzer::wyswietlZalogowanegoUzytkownika()
             }
         }
     }
+    system("pause");
 }
 
 void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
@@ -159,4 +161,9 @@ void UzytkownikMenedzer::wylogowanieUzytkownika()
     idZalogowanegoUzytkownika = 0;
     cout << "Wylogowales sie" << endl;
     system("pause");
+}
+
+int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
 }

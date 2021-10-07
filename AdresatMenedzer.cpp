@@ -1,9 +1,6 @@
 #include "AdresatMenedzer.h"
 
-AdresatMenedzer::AdresatMenedzer()
-{
-    idOstatniegoAdresata = 0;
-}
+AdresatMenedzer::AdresatMenedzer(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {}
 
 void AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika)
 {
@@ -14,7 +11,7 @@ void AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika)
     adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika);
 
     adresaci.push_back(adresat);
-    //dopiszAdresataDoPliku(adresat);
+    plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
     idOstatniegoAdresata++;
 }
@@ -28,18 +25,10 @@ Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
     adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
 
     cout << "Podaj imie: ";
-    //imie = MetodyPomocnicze::wczytajLinie();
-    //imie = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(imie);
-    //adresat.ustawImie(imie);
-
     adresat.ustawImie(MetodyPomocnicze::wczytajLinie());
     adresat.ustawImie(MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.pobierzImie()));
 
     cout << "Podaj nazwisko: ";
-    //nazwisko = MetodyPomocnicze::wczytajLinie();
-    //nazwisko = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(nazwisko);
-    //adresat.ustawImie(nazwisko);
-
     adresat.ustawNazwisko(MetodyPomocnicze::wczytajLinie());
     adresat.ustawNazwisko(MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.pobierzNazwisko()));
 
@@ -83,4 +72,14 @@ void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat)
     cout << "Numer telefonu:     " << adresat.pobierzNumerTelefonu() << endl;
     cout << "Email:              " << adresat.pobierzEmail() << endl;
     cout << "Adres:              " << adresat.pobierzAdres() << endl;
+}
+
+void AdresatMenedzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
+{
+    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+}
+
+void AdresatMenedzer::wyczyscVektorAdresatow()
+{
+    adresaci.clear();
 }

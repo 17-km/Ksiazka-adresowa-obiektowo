@@ -1,11 +1,10 @@
 #include "PlikZAdresatami.h"
 
-PlikZAdresatami::PlikZAdresatami(string nazwaPlikuZAdresatami)
-    : NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)
+PlikZAdresatami::PlikZAdresatami(string nazwaPlikuZAdresatami, string nazwaTymczasowegoPlikuZAdresatami)
+    : NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami), NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI(nazwaTymczasowegoPlikuZAdresatami)
 {
     idOstatniegoAdresata = 0;
 }
-
 
 bool PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
 {
@@ -146,4 +145,57 @@ Adresat PlikZAdresatami::pobierzDaneAdresata(string daneAdresataOddzielonePionow
 int PlikZAdresatami::pobierzIdOstatniegoAdresata()
 {
     return idOstatniegoAdresata;
+}
+
+void PlikZAdresatami::usunWybranegoAdresataZPliku(int idUsuwanegoAdresata)
+{
+    fstream odczytywanyPlikTekstowy;
+    fstream tymczasowyPlikTekstowy;
+    bool czyTymczasowyPlikTekstowyJestPusty = true;
+    string daneJednegoAdresataOddzielonePionowymiKreskami = "";
+    int idOdczytywanegoAdresata = 0;
+
+    odczytywanyPlikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
+
+    if(odczytywanyPlikTekstowy.good() == true)
+    {
+        tymczasowyPlikTekstowy.open(NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI.c_str(),ios::out);
+
+        while(getline(odczytywanyPlikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami))
+        {
+            int idOdczytywanegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneJednegoAdresataOddzielonePionowymiKreskami);
+            if (idUsuwanegoAdresata != idOdczytywanegoAdresata)
+            {
+                idOstatniegoAdresata = idOdczytywanegoAdresata;
+                if (czyTymczasowyPlikTekstowyJestPusty)
+                {
+                    tymczasowyPlikTekstowy << daneJednegoAdresataOddzielonePionowymiKreskami;
+                    czyTymczasowyPlikTekstowyJestPusty = false;
+                }
+                else
+                {
+                    tymczasowyPlikTekstowy << endl << daneJednegoAdresataOddzielonePionowymiKreskami;
+                }
+            }
+        }
+    }
+    odczytywanyPlikTekstowy.close();
+    tymczasowyPlikTekstowy.close();
+
+    usunPlik(NAZWA_PLIKU_Z_ADRESATAMI);
+    zmienNazwePliku(NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI, NAZWA_PLIKU_Z_ADRESATAMI);
+}
+
+void PlikZAdresatami::usunPlik(string nazwaPlikuZRozszerzeniem)
+{
+    if (remove(nazwaPlikuZRozszerzeniem.c_str()) == 0) {}
+    else
+        cout << "Nie udalo sie usunac pliku " << nazwaPlikuZRozszerzeniem << endl;
+}
+
+void PlikZAdresatami::zmienNazwePliku(string staraNazwa, string nowaNazwa)
+{
+    if (rename(staraNazwa.c_str(), nowaNazwa.c_str()) == 0) {}
+    else
+        cout << "Nazwa pliku nie zostala zmieniona." << staraNazwa << endl;
 }

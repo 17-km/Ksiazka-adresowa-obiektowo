@@ -1,8 +1,10 @@
 #include "UzytkownikMenedzer.h"
 
-UzytkownikMenedzer::UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami)
+UzytkownikMenedzer::UzytkownikMenedzer(string nazwaPlikuZUzytkownikami)
+    : plikZUzytkownikami(nazwaPlikuZUzytkownikami)
 {
     idZalogowanegoUzytkownika = 0;
+    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 }
 
 
@@ -71,11 +73,6 @@ void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
         cout << uzytkownicy[i].pobierzHaslo() << endl;
     }
     system("pause");
-}
-
-void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
-{
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 }
 
 void UzytkownikMenedzer::logowanieUzytkownika()
@@ -166,4 +163,12 @@ void UzytkownikMenedzer::wylogowanieUzytkownika()
 int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
 {
     return idZalogowanegoUzytkownika;
+}
+
+bool UzytkownikMenedzer::czyUzytkownikJestZalogowany()
+{
+    if (idZalogowanegoUzytkownika > 0)
+        return true;
+    else
+        return false;
 }

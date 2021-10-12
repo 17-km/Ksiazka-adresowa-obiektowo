@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>110</x>
-      <y>80</y>
-      <w>270</w>
-      <h>290</h>
+      <x>48</x>
+      <y>152</y>
+      <w>216</w>
+      <h>232</h>
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 --
@@ -32,10 +32,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>790</x>
-      <y>80</y>
-      <w>160</w>
-      <h>130</h>
+      <x>592</x>
+      <y>152</y>
+      <w>128</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>Uzytkownik
 --
@@ -47,10 +47,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
-      <y>80</y>
-      <w>330</w>
-      <h>300</h>
+      <x>296</x>
+      <y>152</y>
+      <w>264</w>
+      <h>240</h>
     </coordinates>
     <panel_attributes>UzytkownikMenedzer
 --
@@ -75,14 +75,13 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>790</x>
-      <y>240</y>
-      <w>540</w>
-      <h>170</h>
+      <x>592</x>
+      <y>280</y>
+      <w>472</w>
+      <h>136</h>
     </coordinates>
     <panel_attributes>PlikZUzytkownikami
 --
-- NAZWA_PLIKU_Z_UZYTKOWNIKAMI : String
 --
 + PlikZUzytkownikami()
 + dopiszUzytkownikaDoPliku() : void
@@ -95,10 +94,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1130</x>
-      <y>40</y>
-      <w>400</w>
-      <h>190</h>
+      <x>864</x>
+      <y>120</y>
+      <w>320</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>MetodyPomocnicze
 --
@@ -106,7 +105,6 @@
 + konwerjsaIntNaString() : String
 + wczytajLinie() : String
 + zamienPierwszaLitereNaDuzaAPozostaleNaMale() : String
-+ czyPlikJestPusty : Bool
 + pobierzLiczbe() : String
 + konwerjsaStringNaInt() : Intiger
 + wczytajZnak() : char
@@ -116,10 +114,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
-      <y>450</y>
-      <w>330</w>
-      <h>260</h>
+      <x>296</x>
+      <y>448</y>
+      <w>264</w>
+      <h>208</h>
     </coordinates>
     <panel_attributes>AdresatMenedzer
 --
@@ -141,10 +139,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>790</x>
-      <y>450</y>
-      <w>160</w>
-      <h>150</h>
+      <x>592</x>
+      <y>448</y>
+      <w>128</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>Adresat
 --
@@ -160,14 +158,13 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>790</x>
-      <y>620</y>
-      <w>590</w>
-      <h>310</h>
+      <x>592</x>
+      <y>584</y>
+      <w>472</w>
+      <h>248</h>
     </coordinates>
     <panel_attributes>PlikZAdresatami
 --
-- NAZWA_PLIKU_Z_ADRESATAMI : String
 - NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI : String
 - idOstatniegoAdresata : Intiger
 --
@@ -184,5 +181,43 @@
 - zmienNazwePliku () : void
 </panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1176</x>
+      <y>432</y>
+      <w>432</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>PlikTekstowy
+--
+# NAZWA_PLIKU : String
+--
++ PlikTekstowy()
++ czyPlikJestPusty : Bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1056</x>
+      <y>344</y>
+      <w>136</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>150.0;170.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1056</x>
+      <y>520</y>
+      <w>136</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;180.0</additional_attributes>
   </element>
 </diagram>

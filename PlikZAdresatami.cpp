@@ -199,3 +199,56 @@ void PlikZAdresatami::zmienNazwePliku(string staraNazwa, string nowaNazwa)
     else
         cout << "Nazwa pliku nie zostala zmieniona." << staraNazwa << endl;
 }
+
+void PlikZAdresatami::zaktualizujDaneWybranegoAdresata(Adresat adresat)
+{
+    string liniaZNowymiDanymiAdresata = "";
+    liniaZNowymiDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
+
+    fstream odczytywanyPlikTekstowy;
+    fstream tymczasowyPlikTekstowy;
+    bool czyTymczasowyPlikTekstowyJestPusty = true;
+    string daneJednegoAdresataOddzielonePionowymiKreskami = "";
+
+    odczytywanyPlikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
+
+    if(odczytywanyPlikTekstowy.good() == true)
+    {
+        tymczasowyPlikTekstowy.open(NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI.c_str(),ios::out);
+
+        while(getline(odczytywanyPlikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami))
+        {
+            if (adresat.pobierzId() != pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneJednegoAdresataOddzielonePionowymiKreskami))
+            {
+                if (czyTymczasowyPlikTekstowyJestPusty)
+                {
+                    tymczasowyPlikTekstowy << daneJednegoAdresataOddzielonePionowymiKreskami;
+                    czyTymczasowyPlikTekstowyJestPusty = false;
+                }
+                else
+                {
+                    tymczasowyPlikTekstowy << endl << daneJednegoAdresataOddzielonePionowymiKreskami;
+                }
+            }
+            else
+            {
+                if (czyTymczasowyPlikTekstowyJestPusty)
+                {
+                    tymczasowyPlikTekstowy << liniaZNowymiDanymiAdresata;
+                    czyTymczasowyPlikTekstowyJestPusty = false;
+                }
+                else
+                {
+                    tymczasowyPlikTekstowy << endl << liniaZNowymiDanymiAdresata;
+                }
+            }
+        }
+    }
+    odczytywanyPlikTekstowy.close();
+    tymczasowyPlikTekstowy.close();
+
+    usunPlik(NAZWA_PLIKU_Z_ADRESATAMI);
+    zmienNazwePliku(NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI, NAZWA_PLIKU_Z_ADRESATAMI);
+
+    cout << endl << "Dane zostaly zaktualizowane." << endl << endl;
+}

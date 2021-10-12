@@ -86,3 +86,16 @@ void KsiazkaAdresowa::usunAdresata()
         system("pause");
     }
 }
+
+void KsiazkaAdresowa::edytujAdresata()
+{
+    if (uzytkownikMenedzer.czyUzytkownikJestZalogowany())
+    {
+        adresatMenedzer->edytujAdresata();
+    }
+    else
+    {
+        cout << "Aby edytowac adresata, nalezy sie najpierw zalogowac" << endl;
+        system("pause");
+    }
+}

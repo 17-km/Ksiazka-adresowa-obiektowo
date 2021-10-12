@@ -17,19 +17,19 @@ int main()
     //ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
     //ksiazkaAdresowa.wyswietlZalogowanegoUzytkownika();
     ksiazkaAdresowa.wyswietlWszystkichAdresatow();
-    ksiazkaAdresowa.usunAdresata();
+    ksiazkaAdresowa.edytujAdresata();
     ksiazkaAdresowa.wyswietlWszystkichAdresatow();
-    ksiazkaAdresowa.dodajAdresata();
     //ksiazkaAdresowa.dodajAdresata();
-    ksiazkaAdresowa.wyswietlWszystkichAdresatow();
-    ksiazkaAdresowa.usunAdresata();
-    ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+    //ksiazkaAdresowa.dodajAdresata();
+    //ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+    //ksiazkaAdresowa.usunAdresata();
+    //ksiazkaAdresowa.wyswietlWszystkichAdresatow();
     //ksiazkaAdresowa.wylogowanieUzytkownika();
     //ksiazkaAdresowa.wyswietlZalogowanegoUzytkownika();
     //ksiazkaAdresowa.logowanieUzytkownika();
     //ksiazkaAdresowa.wyswietlZalogowanegoUzytkownika();
-    ksiazkaAdresowa.dodajAdresata();
-    ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+    //ksiazkaAdresowa.dodajAdresata();
+    //ksiazkaAdresowa.wyswietlWszystkichAdresatow();
     ksiazkaAdresowa.wylogowanieUzytkownika();
     ksiazkaAdresowa.wyswietlZalogowanegoUzytkownika();
 

@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>100</x>
+      <x>110</x>
       <y>80</y>
       <w>270</w>
       <h>290</h>
@@ -24,13 +24,15 @@
 + zmianaHaslaZalogowanegoUzytkownika() : void
 + wylogowanieUzytkownika() : void
 + dodajAdresata() : void
-+ wyswietlWszystkichAdresatow() : void</panel_attributes>
++ wyswietlWszystkichAdresatow() : void
++ usunAdresata () : void
++ edytujAdresata () : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>780</x>
+      <x>790</x>
       <y>80</y>
       <w>160</w>
       <h>130</h>
@@ -45,7 +47,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>410</x>
+      <x>420</x>
       <y>80</y>
       <w>330</w>
       <h>300</h>
@@ -73,7 +75,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>780</x>
+      <x>790</x>
       <y>240</y>
       <w>540</w>
       <h>170</h>
@@ -93,10 +95,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1110</x>
-      <y>80</y>
+      <x>1130</x>
+      <y>40</y>
       <w>400</w>
-      <h>140</h>
+      <h>190</h>
     </coordinates>
     <panel_attributes>MetodyPomocnicze
 --
@@ -106,13 +108,15 @@
 + zamienPierwszaLitereNaDuzaAPozostaleNaMale() : String
 + czyPlikJestPusty : Bool
 + pobierzLiczbe() : String
-+ konwerjsaStringNaInt() : Intiger</panel_attributes>
++ konwerjsaStringNaInt() : Intiger
++ wczytajZnak() : char
++ wczytajLiczbeCalkowita() : Intiger</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>410</x>
+      <x>420</x>
       <y>450</y>
       <w>330</w>
       <h>260</h>
@@ -126,14 +130,18 @@
 + AdresatMenedzer()
 + dodajAdresata() : Intiger
 + wyswietlWszystkichAdresatow() : void
++ usunAdresata () : void
++ edytujAdresata () : void
 - podajDaneNowegoAdresat() : Adresat
-- wyswietlDaneAdresata() : void</panel_attributes>
+- wyswietlDaneAdresata() : void
+- podajIdWybranegoAdresata() : Intiger
+- wybierzOpcjeZMenuEdycja() : char</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>780</x>
+      <x>790</x>
       <y>450</y>
       <w>160</w>
       <h>150</h>
@@ -152,23 +160,29 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>780</x>
+      <x>790</x>
       <y>620</y>
       <w>590</w>
-      <h>190</h>
+      <h>310</h>
     </coordinates>
     <panel_attributes>PlikZAdresatami
 --
 - NAZWA_PLIKU_Z_ADRESATAMI : String
+- NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI : String
 - idOstatniegoAdresata : Intiger
 --
 + PlikZAdresatami()
 + dopiszAdresataDoPliku() : bool
 + wczytajAdresatowZalogowanegoUzytkownikaZPliku() : vector&lt;Adresat&gt;
++ usunWybranegoAdresataZPliku() : void
++ zaktualizujDaneWybranegoAdresata() : void
 - zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami() : String
 - pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami() : Intiger
 - pobierzIdAdresataZDanychOddzielonychPionowymiKreskami() : Intiger
-- pobierzDaneAdresata() : Adresat</panel_attributes>
+- pobierzDaneAdresata() : Adresat
+- usunPlik() : void
+- zmienNazwePliku () : void
+</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

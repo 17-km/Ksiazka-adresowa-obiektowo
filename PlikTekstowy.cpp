@@ -13,7 +13,7 @@ bool PlikTekstowy::czyPlikJestPusty()
     if (plikTekstowy.good() == true)
     {
         plikTekstowy.seekg(0, ios::end);
-    if (plikTekstowy.tellg() == 0)
+    if (plikTekstowy.tellg() != 0)
         pusty = false;
     }
 

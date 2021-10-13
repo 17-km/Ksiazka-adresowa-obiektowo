@@ -102,13 +102,13 @@ void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik>
         {
             liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownicy[i]);
 
-            if (i == uzytkownicy.size())
+            if (i == 0)
             {
                 plikTekstowy << liniaZDanymiUzytkownika;
             }
             else
             {
-                plikTekstowy << liniaZDanymiUzytkownika << endl;
+                plikTekstowy << endl << liniaZDanymiUzytkownika;
             }
             liniaZDanymiUzytkownika = "";
         }

@@ -17,8 +17,8 @@ int main()
     //ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
     //ksiazkaAdresowa.wyswietlZalogowanegoUzytkownika();
     ksiazkaAdresowa.wyswietlWszystkichAdresatow();
-    ksiazkaAdresowa.edytujAdresata();
-    ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+    //ksiazkaAdresowa.edytujAdresata();
+    //ksiazkaAdresowa.wyswietlWszystkichAdresatow();
     //ksiazkaAdresowa.dodajAdresata();
     //ksiazkaAdresowa.dodajAdresata();
     //ksiazkaAdresowa.wyswietlWszystkichAdresatow();
@@ -30,6 +30,8 @@ int main()
     //ksiazkaAdresowa.wyswietlZalogowanegoUzytkownika();
     //ksiazkaAdresowa.dodajAdresata();
     //ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+    ksiazkaAdresowa.wyszukajAdresatowPoImieniu();
+    ksiazkaAdresowa.wyszukajAdresatowPoNazwisku();
     ksiazkaAdresowa.wylogowanieUzytkownika();
     ksiazkaAdresowa.wyswietlZalogowanegoUzytkownika();
 

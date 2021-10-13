@@ -4,10 +4,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>48</x>
-      <y>152</y>
+      <x>40</x>
+      <y>160</y>
       <w>216</w>
-      <h>232</h>
+      <h>320</h>
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 --
@@ -26,14 +26,19 @@
 + dodajAdresata() : void
 + wyswietlWszystkichAdresatow() : void
 + usunAdresata () : void
-+ edytujAdresata () : void</panel_attributes>
++ edytujAdresata () : void
++ wyszukajAdresatowPoImieniu() : void
++ wyszukajAdresatowPoNazwisku() : void
++ czyUzytkownikJestZalogowany() : bool
++ wybierzOpcjeZMenuGlownego() : char
++ wybierzOpcjeZMenuUzytkownika() : char</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>592</x>
-      <y>152</y>
+      <x>584</x>
+      <y>160</y>
       <w>128</w>
       <h>104</h>
     </coordinates>
@@ -47,8 +52,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>296</x>
-      <y>152</y>
+      <x>288</x>
+      <y>160</y>
       <w>264</w>
       <h>240</h>
     </coordinates>
@@ -75,8 +80,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>592</x>
-      <y>280</y>
+      <x>584</x>
+      <y>288</y>
       <w>472</w>
       <h>136</h>
     </coordinates>
@@ -94,8 +99,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>864</x>
-      <y>120</y>
+      <x>856</x>
+      <y>128</y>
       <w>320</w>
       <h>152</h>
     </coordinates>
@@ -114,10 +119,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>296</x>
-      <y>448</y>
+      <x>288</x>
+      <y>456</y>
       <w>264</w>
-      <h>208</h>
+      <h>232</h>
     </coordinates>
     <panel_attributes>AdresatMenedzer
 --
@@ -130,17 +135,20 @@
 + wyswietlWszystkichAdresatow() : void
 + usunAdresata () : void
 + edytujAdresata () : void
++ wyszukajAdresatowPoImieniu() : void
++ wyszukajAdresatowPoNazwisku() : void
 - podajDaneNowegoAdresat() : Adresat
 - wyswietlDaneAdresata() : void
 - podajIdWybranegoAdresata() : Intiger
-- wybierzOpcjeZMenuEdycja() : char</panel_attributes>
+- wybierzOpcjeZMenuEdycja() : char
+- wyswietlIloscWyszukanychAdresatow() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>592</x>
-      <y>448</y>
+      <x>584</x>
+      <y>456</y>
       <w>128</w>
       <h>120</h>
     </coordinates>
@@ -158,8 +166,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>592</x>
-      <y>584</y>
+      <x>584</x>
+      <y>592</y>
       <w>472</w>
       <h>248</h>
     </coordinates>
@@ -185,8 +193,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1176</x>
-      <y>432</y>
+      <x>1168</x>
+      <y>440</y>
       <w>432</w>
       <h>136</h>
     </coordinates>
@@ -201,8 +209,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1056</x>
-      <y>344</y>
+      <x>1048</x>
+      <y>352</y>
       <w>136</w>
       <h>152</h>
     </coordinates>
@@ -212,8 +220,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1056</x>
-      <y>520</y>
+      <x>1048</x>
+      <y>528</y>
       <w>136</w>
       <h>160</h>
     </coordinates>
